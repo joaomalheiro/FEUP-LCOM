@@ -1,0 +1,27 @@
+service lab3
+{
+        system
+                DEVIO
+                IRQCTL
+                IOPENABLE
+                ;
+        ipc
+                SYSTEM
+                rs
+                vm
+                pm
+                vfs
+                ;
+        io
+                40:4      # i8254 ports
+                61        # port for speaker control
+                60        # KB IN/OUT
+                64        # KBC STATUS/CTRL
+                ;               
+        irq
+                0         # TIMER 0 IRQ 
+                1         # KBD IRQ
+                ;       
+        uid     0               
+                ;
+};

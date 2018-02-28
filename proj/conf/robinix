@@ -1,0 +1,35 @@
+service robinix
+{
+        system
+                UMAP
+                INT86
+                PRIVCTL
+                READBIOS
+                DEVIO
+                IRQCTL
+                IOPENABLE
+                ;
+        ipc
+                SYSTEM
+                rs
+                vm
+                pm
+                vfs
+                ;
+        io
+                40:4      # Timer
+                60        # KBC
+                64        # KBC
+                70:2      # RTC
+                3f8:8     # COM1
+                ;
+        irq
+                0         # TIMER 0 IRQ
+                1         # KBD IRQ
+                4         # COM1 IRQ
+                8         # RTC IRQ
+                12        # AUX/MOUSE IRQ
+                ;
+        uid     0
+                ;
+};
